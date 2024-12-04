@@ -53,7 +53,5 @@
 
 
 4. EVALUATION & ANALYSIS
-
-tags : [maths.md, portuguese.md]
 5. RELATED WORK
 6. CONCLUSION: DISCUSSION
