@@ -4,7 +4,6 @@
 [MEMBERS]
 
 성연우, 생명과학과, 
-
 임종호, 기계공학부, 
 
 1. PROPOSAL
@@ -43,11 +42,17 @@
   |failures|~~~~|numeric|
   |schoolsup|~~~|binary|
 
+>> 근데 이게 맞냐 가독성 너무 안좋은데 항목도 14개 더 써야함
   
 
   [Additional grade and alcohol variables]
 
 3. METHODOLOGY
+   - ANN 사용하여 예측 모델 학습. 
+
+
+
+
 4. EVALUATION & ANALYSIS
 5. RELATED WORK
 6. CONCLUSION: DISCUSSION
