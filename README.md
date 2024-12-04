@@ -10,7 +10,7 @@
 
    [Motivation: why are you doing this?]
 
-   [What do you wnat to see at the end?]
+   [What do you want to see at the end?]
 
 2. DATASETS
 
