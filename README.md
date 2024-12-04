@@ -20,8 +20,8 @@
    - 두 과목 모두 학생 기본 정보 및 알코올 섭취 정도를 나타내는 30개의 열과 성적을 나타내는 3개의 열로 구성되어있으며, Math course의 경우 395개, Portuguese language course의 경우 649개의 데이터 셋으로 구성되어있다.
    - 데이터 셋은 이진 분류, 5단계 분류, 회귀 방법에 따라 모델링 되었다.
 
-      - 이진분류(binary classification):
-      - 다중분류(5-level classification):
+      - 이진분류(binary classification): 입력값에 따라 분류한 카테고리가 두 가지인 분류 알고리즘. 
+      - 다중분류(5-level classification): 입력값에 따라 분류한 카테고리가 세 가지 이상(본 데이터셋에서는 다섯 가지)인 분류 알고리즘.
       - 회귀(regression):
 
   |Columns|설명|classification level|
