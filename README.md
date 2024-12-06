@@ -6,9 +6,9 @@
 임종호 | 기계공학부 1학년 |
 
 ## I. Proposal
-   **[Motivation: why are you doing this?]**
+   ### [Motivation: why are you doing this?] ###
    
-   **[What do you want to see at the end?]**
+   [What do you want to see at the end?]
 
 ## II. Datasets
 
