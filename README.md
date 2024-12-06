@@ -66,6 +66,71 @@ print(study_data.head())
 ```
 
 
+```python
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+
+# 결측치 확인 및 제거
+math_data = math_data.dropna()
+study_data = study_data.dropna()
+
+# Label Encoding (범주형 -> 숫자형)
+encoder = LabelEncoder()
+for column in ['sex', 'school', 'address']:
+    if column in math_data.columns:
+        math_data[column] = encoder.fit_transform(math_data[column])
+
+# 스케일링 (필요한 경우)
+scaler = StandardScaler()
+if 'G1' in math_data.columns:  # 예: G1 점수 스케일링
+    math_data[['G1', 'G2', 'G3']] = scaler.fit_transform(math_data[['G1', 'G2', 'G3']])
+```
+
+
+```python
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+
+# 입력 데이터와 라벨 준비 (예: 'G3'를 타겟으로 사용)
+X = math_data.drop(columns=['G3'])
+y = math_data['G3']
+
+# Train-Test Split
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# 모델 정의
+model = Sequential([
+    Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
+    Dropout(0.2),
+    Dense(32, activation='relu'),
+    Dense(1)  # 회귀 문제의 경우 활성화 함수 없음
+])
+
+# 모델 컴파일
+model.compile(optimizer='adam', loss='mse', metrics=['mae'])
+
+# 모델 학습
+history = model.fit(X_train, y_train, epochs=50, validation_split=0.2, batch_size=32)
+```
+
+
+```python
+import matplotlib.pyplot as plt
+
+# 모델 평가
+loss, mae = model.evaluate(X_test, y_test)
+print(f"Mean Absolute Error: {mae}")
+
+# 학습 곡선 시각화
+plt.plot(history.history['loss'], label='Loss')
+plt.plot(history.history['val_loss'], label='Validation Loss')
+plt.legend()
+plt.show()
+```
+
+
+
 
 
 4. EVALUATION & ANALYSIS
