@@ -1,5 +1,7 @@
 # 알코올 섭취량에 따른 학업성취도 예측
-
+- 한 줄 설명
+- youtube link
+  
 ## Members
 성연우 | 생명과학과 1학년 | syeonu818@gmail.com
 
