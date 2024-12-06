@@ -50,6 +50,22 @@
 3. METHODOLOGY
    - ANN 사용하여 예측 모델 학습. 
 
+```python
+import pandas as pd
+
+# 데이터셋 불러오기
+math_data = pd.read_csv('/kaggle/input/mathportugeseyouthalcoholstudy/student_math_por_formatted.csv')
+study_data = pd.read_csv('/kaggle/input/alcohol-effects-on-study/Maths.csv')
+
+# 데이터셋 확인
+print("Math Dataset:")
+print(math_data.head())
+
+print("\nStudy Dataset:")
+print(study_data.head())
+```
+
+
 
 
 4. EVALUATION & ANALYSIS
