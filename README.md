@@ -1,9 +1,9 @@
 # 알코올 섭취량에 따른 학업성취도 예측
 
 ## Members
-성연우(2023013118) | 생명과학과 | syeonu818@gmail.com
+성연우, 생명과학과 1학년, syeonu818@gmail.com
 
-임종호 | 기계공학부 | 
+임종호, 기계공학부 1학년, 
 
 # I. Proposal
    [Motivation: why are you doing this?]
