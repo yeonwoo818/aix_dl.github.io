@@ -1,15 +1,12 @@
-# AIX_DL.github.io
-
+# 알코올 섭취량에 따른 학업성취도 예측
 
 ## [MEMBERS]
-
 성연우 (생명과학과) 2023013118
 임종호 (기계공학부) 2024-
 
 # 1. PROPOSAL
-
    [Motivation: why are you doing this?]
-
+   
    [What do you want to see at the end?]
 
 # 2. DATASETS
