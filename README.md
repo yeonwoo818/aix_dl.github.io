@@ -5,12 +5,12 @@
 
 임종호 | 기계공학부 1학년 |
 
-# I. Proposal
+## I. Proposal
    [Motivation: why are you doing this?]
    
    [What do you want to see at the end?]
 
-# II. Datasets
+## II. Datasets
 
    [Alcohol effects on study]
    - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course와 Portuguese language course를 수강하는 학생들의 기본 정보(성별, 거주지, 부모님 직업 등) 및 알코올 섭취 정도, 성적을 포함한다.
@@ -26,7 +26,7 @@
 
   [Additional grade and alcohol variables]
 
-# III. Methodology
+## III. Methodology
    - ANN 사용하여 예측 모델 학습. 
 
 ```python
@@ -109,6 +109,6 @@ plt.show()
 ```
 
 
-# IV. Evaluation & Analysis
-# V. Related Work 
-# VI. Conclusion: Discussion
+## IV. Evaluation & Analysis
+## V. Related Work 
+## VI. Conclusion: Discussion
