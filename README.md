@@ -1,18 +1,18 @@
 # AIX_DL.github.io
 
 
-**[MEMBERS]**
+##[MEMBERS]
 
 성연우 (생명과학과) 2023013118
 임종호 (기계공학부) 2024-
 
-1. PROPOSAL
+#1. PROPOSAL
 
    [Motivation: why are you doing this?]
 
    [What do you want to see at the end?]
 
-2. DATASETS
+#2. DATASETS
 
    [Alcohol effects on study]
    - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course와 Portuguese language course를 수강하는 학생들의 기본 정보(성별, 거주지, 부모님 직업 등) 및 알코올 섭취 정도, 성적을 포함한다.
