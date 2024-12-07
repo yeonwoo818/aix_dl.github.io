@@ -5,7 +5,7 @@
 ## Members
 성연우 | 생명과학과 1학년 | syeonu818@gmail.com
 
-임종호 | 기계공학부 1학년 |
+임종호 | 기계공학부 1학년 | oscar0330@hanyang.ac.kr
 
 ## I. Proposal
    ### Motivation: why are you doing this? ###
