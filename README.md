@@ -65,17 +65,20 @@ from tensorflow.keras.layers import Dense, Dropout
 # 1. 데이터셋 로드
 math_df = pd.read_csv('/kaggle/input/student-alcohol-consumption/student-mat.csv')
 por_df = pd.read_csv('/kaggle/input/student-alcohol-consumption/student-por.csv')
-
+```
+```python
 # 알코올 소비 데이터 (수준별 빈도 데이터)
 alcohol_levels = {
     "low level": {"Frequency": 1054, "Percentage": 55.9},
     "hazardous level": {"Frequency": 679, "Percentage": 36.0},
     "harmful level": {"Frequency": 154, "Percentage": 8.2}
 }
-
+```
+```python
 # 2. 수학 및 포르투갈어 데이터셋 병합
 students_df = pd.concat([math_df, por_df], ignore_index=True)
-
+```
+```python
 # 3. 알코올 소비 수준 분류
 def classify_alcohol_level(dalc, walc):
     avg_alcohol = (dalc + walc) / 2
@@ -87,27 +90,32 @@ def classify_alcohol_level(dalc, walc):
         return "harmful level"
 
 students_df['alcohol_level'] = students_df.apply(lambda x: classify_alcohol_level(x['Dalc'], x['Walc']), axis=1)
-
+```
+```python
 # 4. 범주형 변수 인코딩
 label_columns = ['school', 'sex', 'address', 'famsize', 'Pstatus', 'Mjob', 'Fjob', 'reason', 'guardian', 'schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher', 'internet', 'romantic']
 label_encoder = LabelEncoder()
 
 for col in label_columns:
     students_df[col] = label_encoder.fit_transform(students_df[col])
-
+```
+```python
 # 5. 수치형 변수 정규화
 numerical_columns = ['age', 'Medu', 'Fedu', 'traveltime', 'studytime', 'failures', 'famrel', 'freetime', 'goout', 'Dalc', 'Walc', 'health', 'absences', 'G1', 'G2']
 scaler = MinMaxScaler()
 
 students_df[numerical_columns] = scaler.fit_transform(students_df[numerical_columns])
-
+```
+```python
 # 6. 특성과 타겟 설정
 x = students_df.drop(columns=['G3', 'alcohol_level'])  # G3는 최종 성적, alcohol_level은 보조 정보
 y = students_df['G3']  # 타겟 변수 (최종 성적)
-
+```
+```python
 # 7. 데이터 분할
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
-
+```
+```python
 # 8. 딥러닝 모델 생성
 model = Sequential()
 model.add(Dense(128, input_dim=x_train.shape[1], activation='relu'))
@@ -118,10 +126,12 @@ model.add(Dense(32, activation='relu'))
 model.add(Dense(1, activation='linear'))  # 회귀 문제이므로 선형 활성화 함수 사용
 
 model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
-
+```
+```python
 # 9. 모델 학습
 model.fit(x_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
-
+```
+```python
 # 10. 모델 평가
 loss, mae = model.evaluate(x_test, y_test)
 print(f'테스트 세트에서의 평균 절대 오차 (MAE): {mae}')
