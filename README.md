@@ -35,7 +35,11 @@
 
   [Additional grade and alcohol variables]
 
-```
+
+## III. Methodology
+   - ANN 사용하여 예측 모델 학습.
+
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -45,12 +49,6 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.ensemble import RandomForestRegressor  
 from sklearn.metrics import mean_squared_error, r2_score
 ```
-
-
-## III. Methodology
-   - ANN 사용하여 예측 모델 학습.
-
-
 
 
 
