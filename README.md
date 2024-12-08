@@ -36,7 +36,8 @@
   [Additional grade and alcohol variables]
 
 ## III. Methodology
-   - ANN 사용하여 예측 모델 학습. 
+   - ANN 사용하여 예측 모델 학습.
+
 
 
 
