@@ -89,6 +89,12 @@ print("Merged Dataset Shape:", data.shape)
   - pd.concat: 두 데이터프레임을 세로로 이어붙임
 - 병합 후, 무한값(Inf)과 결측값(NaN) 제거
 
+- 두 데이터셋에서 common_colums만 사용해 데이터를 병합하는 이유: 데이터의 구조적 일관성을 유지하기 위해.
+  - 두 데이터셋이 서로 다른 column 구조를 가질 수 있음. 공통 column만 선택하면 병합 후에도 데이터의 각 열의 의미가 일관되게 유지됨.
+  - 예를 들어, 두 데이터셋에 모두 존재하는 column이 학생 이름, 나이, 성별 등이라면 이 정보만 병합에 사용됨.
+- 결측값 및 불필요한 정보 제거
+  - 공통 column이 아닌 데이터는 의미가 없거나 분석에 방해될 수 있음.  
+
 ```python
 # Step 5: Preprocess the data
 # Ensure all categorical columns have consistent types
