@@ -38,6 +38,8 @@
 
 ## III. Methodology
    - Randomforest를 사용하여 학생의 알코올 섭취 및 성적 데이터 분석, 예측
+   - 학생의 성적 데이터를 기반으로 예측 모델을 생성.
+   - 전처리, 학습, 평가의 전체 머신러닝 파이프라인을 보여주며, 결과적으로 randomforest 모델을 사용하여 학생 성적(G3)을 예측함. 
 
 ```python
 # Step 1: Import the libraries
@@ -65,12 +67,16 @@ from sklearn.metrics import mean_squared_error, r2_score
 data1 = pd.read_csv('/kaggle/input/student-alcohol-consumption/student-mat.csv')
 data2 = pd.read_csv('/kaggle/input/student-alcohol-consumption/student-por.csv')
 ```
+- data1: 학생들의 수학 성적과 관련된 데이터(student-mat.csv)
+- data2: 학생들의 포르투갈어 성적과 관련된 데이터(student-por.csv)
 
 ```python
 # Step 3: Explore the datasets
 print("Dataset 1 Shape:", data1.shape)
 print("Dataset 2 Shape:", data2.shape)
 ```
+- 데이터의 차원(shape)을 출력하여 데이터셋의 크기를 확인
+  - (rows, columns) 형태로 나타남
 
 ```python
 # Step 4: Merge datasets
@@ -82,6 +88,10 @@ data = data.replace([np.inf, -np.inf], np.nan)
 data = data.dropna()
 print("Merged Dataset Shape:", data.shape)
 ```
+- 두 데이터셋에서 공통 column만 사용하여 데이터 병합
+  - set.intersection: 공통 column 찾기
+  - pd.concat: 두 데이터프레임을 세로로 이어붙임
+- 병합 후, 무한값(Inf)과 결측값(NaN) 제거
 
 ```python
 # Step 5: Preprocess the data
@@ -101,17 +111,30 @@ target = data['G3']
 scaler = StandardScaler()
 features_scaled = scaler.fit_transform(features)
 ```
+- 범주형 데이터를 식별하고, 모든 값을 문자열로 변환
+- Label Encoding: 범주형 데이터를 숫자로 변환
+
+- features와 target 분리
+- G3: 최종 성적(예측 목표) / 나머지 column: 특징(설명 변수)로 사용
+
+- StandardScaler: 모든 특징값을 평균 0, 표준편차 1로 변환
+  - 모델 학습 효율을 높이고 과적합 방지
 
 ```python
 # Step 6: Split the data
 X_train, X_test, y_train, y_test = train_test_split(features_scaled, target, test_size=0.2, random_state=42)
 ```
+- Train-Test Split: 데이터를 80% 학습, 20% 테스트로 분리
+  - random_state = 42: 재현 가능한 결과를 보장
 
 ```python
 # Step 7: Train the model
 model = RandomForestRegressor(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 ```
+- Random Forest Regressor:
+  - 랜덤하게 선택된 여러 개의 트리(Decision Trees)로 구성된 회귀 모델
+  - n_estimators = 100: 트리의 개수 설정
 
 ```python
 # Step 8: Evaluate the model
@@ -121,7 +144,10 @@ r2 = r2_score(y_test, y_pred)
 print(f"RMSE: {rmse}")
 print(f"R^2 Score: {r2}")
 ```
-
+- y_pred: 테스트 데이터를 예측한 결과
+- 평가지표:
+  - RMSE: 예측값과 실제값의 평균 오차(낮을수록 좋음)
+  - R^2 Score: 모델 설명력(1에 가까울수록 좋음)
 
 
 
