@@ -35,6 +35,18 @@
 
   [Additional grade and alcohol variables]
 
+```
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.ensemble import RandomForestRegressor  
+from sklearn.metrics import mean_squared_error, r2_score
+```
+
+
 ## III. Methodology
    - ANN 사용하여 예측 모델 학습.
 
