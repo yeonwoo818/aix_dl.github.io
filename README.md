@@ -31,7 +31,7 @@
     
   ### 2. Frequency & percentage of alcohol consumption of Austrailian university students
 
-- The association between levels of alcohol consumption and mental health problems and academic performance among young university students (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178142)에 있는 <ins> alcohol consumption level</ins> 데이터를 사용하였다.
+- The association between levels of alcohol consumption and mental health problems and academic performance among young university students (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178142)에 있는 **alcohol consumption level** 데이터를 사용하였다.
 - 검증된 논문의 데이터이므로 해당 데이터를 알코올 섭취 정도를 분류하는 기준으로 설정하였다. 
 
 
