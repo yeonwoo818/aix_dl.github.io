@@ -199,7 +199,7 @@ plt.ylabel('Mean Absolute Error')
 plt.legend()
 plt.show()
 ```
-위에 코드 과정을 학습과정을 시각화하는 그래프를 생성합니다.
+위에 코드를 통해 학습과정을 시각화하는 그래프를 생성할 수 있습니다. 위 코드는 학슴 검증 손실 그래프와 학습과 검증 MAE그래프를 생성합니다.
 
 ![Training and Validation Loss/MAE table1](./blog-code_files/blog-code_1_1.png)
 
@@ -214,7 +214,20 @@ plt.show()
 이 두 값이 비슷하면 모델이 균형 잡힌 학습을 하고 있음을 나타냅니다. 하지만 차이가 크다면 과적합 가능성이 있습니다. 위 그래프도 마찬가지로 그래프가 크게 흔들리므로 학습 과정이 불안정하거나 데이터가 불균형할 가능성이 있습니다.
 
 이 과적합을 해결하는 방법은 위와 같은 방법으로 더 많은 데이터를 확보하거나 모델을 간소화하면 과적함을 해결할 수 있습니다.
+```python
+# 예측 값 계산
+y_pred = model.predict(x_test)
 
+# 실제 값과 예측 값 비교
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred, alpha=0.7, color='blue')
+plt.plot([0, 1], [0, 1], '--', color='red', transform=plt.gca().transAxes)  # y=x 선
+plt.title('Predicted vs Actual Values')
+plt.xlabel('Actual G3 Scores')
+plt.ylabel('Predicted G3 Scores')
+plt.show()
+```
+위 코드를 통해 실제값과 예측값을 비교하는 그래프를 생성할 수 있습니다.
 ![Predicted vs Actual table1](./blog-code_files/blog-code_2_1.png)
 
 위 그래프는 예측값과 실제값을 그래프로 나타내줍니다. 빨간색 실선은 실제값이며, 파란색 값은 예측값을 나타냅니다.
@@ -222,9 +235,32 @@ plt.show()
 
 위 그래프에 경우 G3 Grade가 0.0, 7.5일 때를 제외하고 심하게 분포되어 있지 않습니다. 따라서 이런 특정 값을 제외하면 모델의 예측 정도를 충분히 신뢰할 수 있다는 것을 나타냅니다.
 
+```python
+# 잔차 계산
+residuals = y_test - y_pred.flatten()
+
+# 히스토그램으로 잔차 분석
+plt.figure(figsize=(10, 6))
+sns.histplot(residuals, kde=True, color='purple')
+plt.title('Residuals Distribution')
+plt.xlabel('Residuals')
+plt.ylabel('Frequency')
+plt.show()
+
+# 잔차 산점도
+plt.figure(figsize=(10, 6))
+plt.scatter(y_pred, residuals, alpha=0.7, color='green')
+plt.axhline(0, linestyle='--', color='red')
+plt.title('Residuals vs Predicted')
+plt.xlabel('Predicted Values')
+plt.ylabel('Residuals')
+plt.show()
+```
+위 코드를 통해 잔차를 비교할 수 있는 그래프를 생성할 수 있습니다. 이 때 진차는 실제값 - 예측값을 나타내며, 모델의 예측 값이 실제 값에서 얼마나 벗어났는지를 알아낼 수 있습니다. 위 코드는 잔차의 빈도 그래프와 잔차의 산점도 그래프를 생성해냅니다.
+
 ![Residual Analysis table1](./blog-code_files/blog-code_3_1.png)
 
-위 그래프는 차가 나오는 빈도를 나타내는 그래프입니다. 이 때 진차는 실제값 - 예측값을 나타내며, 모델의 예측 값이 실제 값에서 얼마나 벗어났는지를 나타냅니다. 즉, 잔차가 작을수록 모델의 예측이 정확합니다.
+위 그래프는 차가 나오는 빈도를 나타내는 그래프입니다. 그래프 내에서 잔차값이 낮은 빈도가 높을수록 모델의 예측이 정확합니다.
 
 위 그래프를 보면 잔차가 0과 2 사이일 때 매우 잦은 빈도가 발생한 것을 나타내고 있습니다. 위 잔차 정의를 보았을 때 이 모델은 예측값과 실제값이 유사한 빈도가 높다는 것을 나태내었으므로 모델의 예측 정도를 신뢰할만 하다고 볼 수 있습니다.
 
@@ -250,7 +286,22 @@ plt.show()
 
 위 그래프는 잔차가 한쪽으로 치우친 것을 나타내므로 모델이 편향된 예측을 하고 있을 가능성이 있습니다.
 이를 해결하기 위해선 모델 구조를 재설계하거나 추가 데이터가 필요합니다.
+```python
+# 랜덤 포레스트로 특성 중요도 계산
+rf_model = RandomForestRegressor(random_state=42)
+rf_model.fit(x_train, y_train)
+importances = rf_model.feature_importances_
 
+# 특성 중요도 시각화
+features = x.columns
+plt.figure(figsize=(12, 6))
+sns.barplot(x=importances, y=features, palette='viridis')
+plt.title('Feature Importances')
+plt.xlabel('Importance')
+plt.ylabel('Features')
+plt.show()
+```
+위 코드를 통해 변수의 특성 중요도를 파악할 수 있는 그래프를 생성할 수 있습니다.
 ![Peature Importance table](./blog-code_files/blog-code_4_0.png)
 
 위 그래프는 특성 중요도를 나타내는 그래프입니다. 이 그래프를 통해 각 변수의 상대적 중요도를 알 수 있습니다. 
