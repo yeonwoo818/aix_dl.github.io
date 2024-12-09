@@ -311,10 +311,10 @@ plt.show()
 
 ## V. Related Work 
 - dataset
-     Student Alcohol Consumption : https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
-     Frequency & percentage of alcohol consumption of Austrailian university students : https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178142
+    - Student Alcohol Consumption : https://www.kaggle.com/datasets/uciml/student-alcohol-consumption
+    - Frequency & percentage of alcohol consumption of Austrailian university students : https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178142
 - Execution Platform
-     Kaggle : https://www.kaggle.com/
+    - Kaggle : https://www.kaggle.com/
            
 
 ## VI. Conclusion: Discussion
