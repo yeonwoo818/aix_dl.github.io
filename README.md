@@ -22,8 +22,6 @@
    - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course와 Portuguese language course를 수강하는 학생들의 기본 정보들과 알코올 섭취 정도, 3개 학기 성적을 포함한다.
      
    - 두 과목 모두 학생의 정보를 나타내는 30개의 열과 성적을 나타내는 3개의 열로 구성되어있으며, Math course의 경우 395개, Portuguese language course의 경우 649개의 데이터셋으로 구성되어있다.
-     
-  ~~ - 데이터셋은 이진 분류, 5단계 분류, 회귀 방법에 따라 모델링 되었다. ~~
 
     
   ### 2. Frequency & percentage of alcohol consumption of Austrailian university students
