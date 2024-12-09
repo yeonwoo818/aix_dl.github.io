@@ -16,7 +16,7 @@
 
 총 두 가지 데이터셋을 활용하였다. 
 
-   ### [1. Student Alcohol Consumption]
+   ### 1. Student Alcohol Consumption
    - 학생 정보와 알코올 섭취량, 이에 따른 학업 성취도를 일일이 수집하기에는 한계가 있으므로 kaggle에서 제공하는 데이터셋을 사용하였다. (https://www.kaggle.com/datasets/uciml/student-alcohol-consumption)
    - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course와 Portuguese language course를 수강하는 학생들의 기본 정보, 알코올 섭취 정도, 3개 학기 성적을 포함한다. 
    - 두 과목 모두 알코올 섭취 정도를 포함하여 학생의 정보를 나타내는 30개의 열과 성적을 나타내는 3개의 열로 구성되어있으며, Math course의 경우 395개, Portuguese language course의 경우 649개의 데이터셋으로 구성되어있다.
@@ -29,10 +29,11 @@
       - 회귀(regression):
 ```
     
-  ### [2. Frequency & percentage of alcohol consumption of Austrailian university students]
+  ### 2. Frequency & percentage of alcohol consumption of Austrailian university students
 
+- The association between levels of alcohol consumption and mental health problems and academic performance among young university students (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178142)에 있는 <ins> alcohol consumption level </ins> 데이터를 사용하였다.
+- 검증된 논문의 데이터이므로 해당 데이터를 알코올 섭취 정도를 분류하는 기준으로 설정하였다. 
 
-The association between levels of alcohol consumption and mental health problems and academic performance among young university students
 
 
 
