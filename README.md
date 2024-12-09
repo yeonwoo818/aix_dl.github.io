@@ -175,15 +175,22 @@ print(f'테스트 세트에서의 평균 절대 오차 (MAE): {mae}')
 
 ## IV. Evaluation & Analysis
 
-![feature importance table](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_1.png)
+![Training and Validation Loss/MAE table1](./blog-code_files/blog-code_1_1.png)
 
-![distribution of final grade(G3)](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_3.png)
+![Training and Validation Loss/MAE table2](./blog-code_files/blog-code_1_2.png)
 
-![Daily Alcohol Consumption vs Final Grades table](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_4.png)
+![Predicted vs Actual table1](./blog-code_files/blog-code2_1.png)
 
-![Weekend Alcohol Consumption vs Final Grades table](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_5.png)
+![Residual Analysis table1](./blog-code_files/blog-code_3_1.png)
 
-![correlation Heatmap table](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_6.png)
+![Residual Analysis table2](./blog-code_files/blog-code_3_2.png)
+
+
+![Peature Importance table](./blog-code_files/blog-code_4_0.png)
+
+![heatmap table 1](./blog-code_files/blog-code_5_0.png)
+
+![heatmap table 2](./blog-code_files/blog-code_5_2.png)
 
 ## V. Related Work 
 ## VI. Conclusion: Discussion
