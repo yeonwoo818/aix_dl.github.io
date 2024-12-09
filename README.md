@@ -21,16 +21,20 @@
      
    - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course와 Portuguese language course를 수강하는 학생들의 기본 정보들과 알코올 섭취 정도, 3개 학기 성적을 포함한다.
      
-   - 두 과목 모두 학생의 정보(알코올 섭취 정도 포함)를 나타내는 30개의 열과 성적을 나타내는 3개의 열로 구성되어있으며, Math course의 경우 395개, Portuguese language course의 경우 649개의 데이터셋으로 구성되어있다.
+   - 두 과목 모두 학생의 정보를 나타내는 30개의 열과 성적을 나타내는 3개의 열로 구성되어있으며, Math course의 경우 395개, Portuguese language course의 경우 649개의 데이터셋으로 구성되어있다.
      
-   - 데이터셋은 이진 분류, 5단계 분류, 회귀 방법에 따라 모델링 되었다.
+  ~~ - 데이터셋은 이진 분류, 5단계 분류, 회귀 방법에 따라 모델링 되었다. ~~
 
     
   ### 2. Frequency & percentage of alcohol consumption of Austrailian university students
 
-- The association between levels of alcohol consumption and mental health problems and academic performance among young university students (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178142) 에 있는 **alcohol consumption level** 데이터를 사용하였다.
-  
-- 검증된 논문의 데이터이므로 해당 데이터를 알코올 섭취 정도를 분류하는 기준으로 설정하였다.
+- The association between levels of alcohol consumption and mental health problems and academic performance among young university students (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178142) 에 있는 **alcohol consumption level (학생별 알코올 섭취 수준)** 데이터를 사용하였다.
+
+- 2518명의 학생의 알코올 섭취 수준에 대한 빈도(frequency)와 백분율(percentage)를 나타내는 데이터이며, 개별 학생 데이터는 포함하지 않는다.
+
+
+
+- 이 두 데이터를 결합하기 위해 두번째 데이터를 학생별 알코올 섭취 수준을 분류하는 기준으로 설정하고, kaggle 데이터셋에 학생별 알코올 섭취 수준을 할당하였다. 
   
 - kaggle 데이터셋에서 Dalc 와 Walc는 각각 주중과 주말에 섭취한 알코올 양을 의미한다. 두 값의 평균을 구하여 그 값이 속하는 범위에 따라 알코올 섭취 정도를 low-level, hazardous-level, harmful-level 로 정의하였다.
   
