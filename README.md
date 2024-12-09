@@ -21,16 +21,17 @@
 
    - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course 와 
 
+```
+      - 이진분류(binary classification): 입력값에 따라 분류한 카테고리가 두 가지인 분류 알고리즘. 
+      - 다중분류(5-level classification): 입력값에 따라 분류한 카테고리가 세 가지 이상(본 데이터셋에서는 다섯 가지)인 분류 알고리즘.
+      - 회귀(regression):
+```
+    
   ### [Frequency & percentage of alcohol consumption of Austrailian university students]
 
 
 The association between levels of alcohol consumption and mental health problems and academic performance among young university students
 
-
-
-      - 이진분류(binary classification): 입력값에 따라 분류한 카테고리가 두 가지인 분류 알고리즘. 
-      - 다중분류(5-level classification): 입력값에 따라 분류한 카테고리가 세 가지 이상(본 데이터셋에서는 다섯 가지)인 분류 알고리즘.
-      - 회귀(regression):
 
 
 
