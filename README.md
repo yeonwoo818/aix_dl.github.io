@@ -25,12 +25,6 @@
      
    - 데이터셋은 이진 분류, 5단계 분류, 회귀 방법에 따라 모델링 되었다.
 
-
-```
-      - 이진분류(binary classification): 입력값에 따라 분류한 카테고리가 두 가지인 분류 알고리즘. 
-      - 다중분류(5-level classification): 입력값에 따라 분류한 카테고리가 세 가지 이상(본 데이터셋에서는 다섯 가지)인 분류 알고리즘.
-      - 회귀(regression):
-```
     
   ### 2. Frequency & percentage of alcohol consumption of Austrailian university students
 
