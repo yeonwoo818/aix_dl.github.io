@@ -57,8 +57,10 @@ from tensorflow.keras.layers import Dense, Dropout
 ```
 
 - pandas: 데이터 조작 및 분석을 위한 라이브러리
+  
           데이터프레임 형식으로 데이터를 불러오고, 정리하여 분석하는데 사용함.
 - numpy: 수치 계산 및 데이터 처리를 위한 라이브러리
+  
          다양한 수학 함수를 제공. 수치 연산, 배열 및 행렬 연산에 사용함.
 - matplotlib.pyplot: 데이터 시각화 라이브러리
                      선형 그래프, 막대 그래프 등을 그리는데 사용함.
