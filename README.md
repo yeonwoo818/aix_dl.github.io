@@ -16,7 +16,7 @@
 
 총 두 가지 데이터셋을 활용하였다. 
 
-   ### 1. [Student Alcohol Consumption]
+   ### [1. Student Alcohol Consumption]
    - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course와 Portuguese language course를 수강하는 학생들의 기본 정보(성별, 거주지, 부모님 직업 등) 및 알코올 섭취 정도, 성적을 포함한다.
    - 두 과목 모두 학생 기본 정보 및 알코올 섭취 정도를 나타내는 30개의 열과 성적을 나타내는 3개의 열로 구성되어있으며, Math course의 경우 395개, Portuguese language course의 경우 649개의 데이터 셋으로 구성되어있다.
    - 데이터 셋은 이진 분류, 5단계 분류, 회귀 방법에 따라 모델링 되었다.
@@ -32,7 +32,7 @@
       - 회귀(regression):
 ```
     
-  ### 2. [Frequency & percentage of alcohol consumption of Austrailian university students]
+  ### [2. Frequency & percentage of alcohol consumption of Austrailian university students]
 
 
 The association between levels of alcohol consumption and mental health problems and academic performance among young university students
