@@ -184,7 +184,7 @@ print(f'테스트 세트에서의 평균 절대 오차 (MAE): {mae}')
 
 ![feature importance table](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_1.png)
 
-![distribution of final grade(G3)](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_2.png)
+![distribution of final grade(G3)](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_3.png)
 
 
 ## V. Related Work 
