@@ -18,8 +18,11 @@
 
    ### 1. Student Alcohol Consumption
    - 학생 정보와 알코올 섭취량, 이에 따른 학업 성취도를 일일이 수집하기에는 한계가 있으므로 kaggle에서 제공하는 데이터셋을 사용하였다. (https://www.kaggle.com/datasets/uciml/student-alcohol-consumption)
-   - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course와 Portuguese language course를 수강하는 학생들의 기본 정보, 알코올 섭취 정도, 3개 학기 성적을 포함한다. 
+     
+   - 해당 데이터는 두 포르투갈 학교의 중등교육 학생 성취도를 다룬다. Math course와 Portuguese language course를 수강하는 학생들의 기본 정보, 알코올 섭취 정도, 3개 학기 성적을 포함한다.
+     
    - 두 과목 모두 알코올 섭취 정도를 포함하여 학생의 정보를 나타내는 30개의 열과 성적을 나타내는 3개의 열로 구성되어있으며, Math course의 경우 395개, Portuguese language course의 경우 649개의 데이터셋으로 구성되어있다.
+     
    - 데이터셋은 이진 분류, 5단계 분류, 회귀 방법에 따라 모델링 되었다.
 
 
@@ -32,10 +35,15 @@
   ### 2. Frequency & percentage of alcohol consumption of Austrailian university students
 
 - The association between levels of alcohol consumption and mental health problems and academic performance among young university students (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0178142) 에 있는 **alcohol consumption level** 데이터를 사용하였다.
+  
 - 검증된 논문의 데이터이므로 해당 데이터를 알코올 섭취 정도를 분류하는 기준으로 설정하였다.
+  
 - kaggle 데이터셋에서 Dalc 와 Walc는 각각 주중과 주말에 섭취한 알코올 양을 의미한다. 두 값의 평균을 구하여 그 값이 속하는 범위에 따라 알코올 섭취 정도를 low-level, hazardous-level, harmful-level 로 정의하였다.
+  
 - low-level / hazardous-level / harmful-level의 범위는 각각 1.0 ~ 2.33 / 2.34 ~ 3.67 / 3.68 ~ 5.0 이다.
+  
   - 1.0 에서 5.0 까지의 범위를 3등분하여 설정하였다.
+    
   - 위와 같이 단순히 범위 기반으로 설정할 수 있고 이외에도 (1) 분포에 기반하여 경계값을 설정하거나 (2) 분위수에 기반하여 경계값을 설정할 수 있다. 단순 범위 기반의 경우 빠르고 간단한 분석에 적합하며 현재 상황에서 충분히 유용하다고 판단하여 단순 범위 기반으로 경계값을 정하였다. 
 
 
