@@ -179,7 +179,7 @@ print(f'테스트 세트에서의 평균 절대 오차 (MAE): {mae}')
 
 ![Training and Validation Loss/MAE table2](./blog-code_files/blog-code_1_2.png)
 
-![Predicted vs Actual table1](./blog-code_files/blog-code2_1.png)
+![Predicted vs Actual table1](./blog-code_files/blog-code_2_1.png)
 
 ![Residual Analysis table1](./blog-code_files/blog-code_3_1.png)
 
