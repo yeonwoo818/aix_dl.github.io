@@ -53,12 +53,8 @@
 ```python
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
-from sklearn.ensemble import RandomForestRegressor  
-from sklearn.metrics import mean_squared_error, r2_score
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 ```
@@ -68,12 +64,6 @@ from tensorflow.keras.layers import Dense, Dropout
 
 - numpy: 수치 계산 및 데이터 처리를 위한 라이브러리
          다양한 수학 함수를 제공. 수치 연산, 배열 및 행렬 연산에 사용함.
-
-- matplotlib.pyplot: 데이터 시각화 라이브러리
-                     선형 그래프, 막대 그래프 등을 그리는데 사용함.
-
-- seaborn: matplotlib 기반의 고급 데이터 시각화 라이브러리
-           heatmap, fairplot 등 데이터의 통계적 관계를 시각적으로 표현하는 그래프 생성 가능.
 
 - sklearn 모듈: 머신러닝 작업을 위해 다양한 모델 및 유틸리티 제공
   
@@ -87,13 +77,6 @@ from tensorflow.keras.layers import Dense, Dropout
                   feature scaling을 통해 모델 학습을 안정화시킴.
 
     * feature scaling: 데이터의 각 특성(feature)이 서로 다른 단위를 가질 때, 이를 동일한 범위로 변환하여 머신러닝 알고리즘의 성능을 향상시키는 과정
-  
-  - RandomForestRegressor: 랜덤 포레스트 알고리즘 기반의 회귀 분석 모델.
-                           데이터의 복잡한 비선형 관계를 학습하며, 특성 중요도를 제공할 수 있음.
-  
-  - mean_squared_error: 모델의 예측값과 실제값 간의 평균 제곱 오차를 계산함.
-    
-  - r2_score: 모델이 데이터를 얼마나 잘 설명하는지를 나타내는 통계 지표.
     
 - TensorFlow 모듈: 오픈 소스 머신러닝 및 딥러닝 라이브러리.
   
