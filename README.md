@@ -86,7 +86,7 @@ from tensorflow.keras.layers import Dense, Dropout
   - MinMaxScaler: 데이터의 값을 특정 범위로(기본적으로 0~1)로 스케일링함.
                   feature scaling을 통해 모델 학습을 안정화시킴.
 
-    feature scaling: 데이터의 각 특성(feature)이 서로 다른 단위를 가질 때, 이를 동일한 범위로 변환하여 머신러닝 알고리즘의 성능을 향상시키는 과정
+    %23 feature scaling: 데이터의 각 특성(feature)이 서로 다른 단위를 가질 때, 이를 동일한 범위로 변환하여 머신러닝 알고리즘의 성능을 향상시키는 과정
   
   - RandomForestRegressor: 랜덤 포레스트 알고리즘 기반의 회귀 분석 모델.
                            데이터의 복잡한 비선형 관계를 학습하며, 특성 중요도를 제공할 수 있음.
