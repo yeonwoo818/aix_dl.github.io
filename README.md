@@ -186,6 +186,11 @@ print(f'테스트 세트에서의 평균 절대 오차 (MAE): {mae}')
 
 ![distribution of final grade(G3)](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_3.png)
 
+![Daily Alcohol Consumption vs Final Grades table](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_3.png)
+
+![Weekend Alcohol Consumption vs Final Grades table](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_3.png)
+
+![correlation Heatmap table](./alcohol-study-and-consumption_files/alcohol-study-and-consumption_0_3.png)
 
 ## V. Related Work 
 ## VI. Conclusion: Discussion
