@@ -198,12 +198,12 @@ model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
 
 
 -  딥러닝 모델을 (input layer / hidden layer / output layer) 정의한다.
-  - input layer: Dense(128)은 특성 개수(input_dim)에 따라 첫 번째 hidden layer을 생성한다.
-  - hidden layer:
+  - <ins>input layer</ins>: Dense(128)은 특성 개수(input_dim)에 따라 첫 번째 hidden layer을 생성한다.
+  - <ins>hidden layer</ins>:
       - 128 → 64 → 32 perceptron을 가진 3개의 hidden layer을 형성한다.
       - ReLU 함수를 사용한다.
       - Dropout(20%): 과적합 방지를 위해 perceptron의 일부를 무작위로 비활성화해 특정 퍼셉트론의 과도한 의존을 줄인다. 각 훈련 단계에서 퍼셉트론의 20%를 무작위로 비활성화 하는 것을 의미한다.
-  - output layer: Dense(1)은 단일 연속형 값을 출력한다.
+  - <ins>output layer</ins>: Dense(1)은 단일 연속형 값을 출력한다.
 
 - compile
   - adam: 적응형 학습률 최적화 알고리즘
