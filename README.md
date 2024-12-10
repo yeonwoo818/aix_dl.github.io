@@ -110,7 +110,7 @@ alcohol_levels = {
     "harmful level": {"Frequency": 154, "Percentage": 8.2}
 }
 ```
-
+- 논문 데이터의 알코올 섭취 수준 별 빈도와 백분율 값이다. 
 ```python
 # 2. 수학 및 포르투갈어 데이터셋 병합
 students_df = pd.concat([math_df, por_df], ignore_index=True)
