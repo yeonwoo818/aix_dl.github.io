@@ -117,6 +117,8 @@ students_df = pd.concat([math_df, por_df], ignore_index=True)
 ```
 - 두 데이터프레임(math_df, por_df)을 하나로 결합한다.
 - ignore_index=True를 통해 새로운 데이터프레임의 인덱스를 재설정한다.
+- ignore_index=True는 pandas의 pd.contact에서 사용되는 매개변수로, 데이터를 병합할 때 기존의 인덱스를 무시하고 새로 연속적인 인덱스를 생성하도록 지정한다.
+  - ignore_index=False를 하면 병합할 때 원래 데이터프레임의 인덱스를 유지한다.
 
 ```python
 # 3. 알코올 소비 수준 분류
@@ -133,7 +135,8 @@ students_df['alcohol_level'] = students_df.apply(lambda x: classify_alcohol_leve
 ```
 - Dalc(주중 음주 수준)과 Walc(주말 음주 수준)의 평균을 구하여 세 가지 음주 수준으로 분류한다.
 - apply를 사용하여 각 행에 classify_alcohol_level 함수를 적용한다.
-
+  - apply: pandas에서 제공하는 함수로, 데이터프레임의 각 행 또는 열에 함수를 적용할 때 사용한다. 위 경우 axis = 1 이므로 행에 함수를 적용한다.
+  
 ```python
 # 4. 범주형 변수 인코딩
 label_columns = ['school', 'sex', 'address', 'famsize', 'Pstatus', 'Mjob', 'Fjob', 'reason', 'guardian', 'schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher', 'internet', 'romantic']
@@ -168,7 +171,8 @@ y = students_df['G3']  # 타겟 변수 (최종 성적)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 ```
 - 데이터셋을 학습 세트(80%)와 테스트 세트(20%)로 분할한다.
-- random_state = 42 (임의의 값)을 통해 결과를 재현 가능하도록 설정한다.
+- random_state는 데이터 분할 시 난수를 생성하는 초기값(시드)을 고정한다. 시드가 고정되면 항상 같은 방식으로 데이터를 분할하므로 동일한 결과를 나타낸다. 
+  - random_state = 42 (임의의 값)을 통해 동일한 결과를 재현 가능하도록 하여 신뢰성을 높인다.
 
 ```python
 # 8. 딥러닝 모델 생성
@@ -182,7 +186,22 @@ model.add(Dense(1, activation='linear'))  # 회귀 문제이므로 선형 활성
 
 model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
 ```
-- 딥러닝 모델을 (input layer / hidden layer / output layer) 정의한다.
+- Sequential: 딥러닝 모델의 layer을 순차적으로 쌓도록 하는 Keras의 클래스이다.
+- Dense: Fully connected layer을 구현하는 Keras의 레이어 클래스이다.
+  - 입력과 출력을 각각의 퍼셉트론이 완전 연결하는 신경망의 기본 구성 요소이다.
+  - Dense의 주요 매개변수:
+    - units: layer에서 생성할 퍼셉트론의 개수(128, 64, 32)이다. 
+    - activation: 활성화 함수. 퍼셉트론의 출력 값을 비선형 변환할 때 사용한다.
+      - ReLU(Rectified Linear Unit) 함수는 음수 값을 0으로 바꾸고 양수는 그대로 유지한다. 비선형 특성을 추가하여 모델이 복잡한 패턴을 학습할 수 있게 한다.
+    - input_dim: 입력 데이터의 차원이다. 처음 layer에서만 필요하다.
+        - input_dim=x_train.shape[1]: 첫 layer에서 입력 데이터의 특성 수를 명시적으로 정의한 것이다.
+- Dropout: 모델의 과적합(overfitting)을 방지하기 위한 정규화 기법이다.
+  - 훈련 중 무작위로 퍼셉트론의 일부를 값을 0으로 비활성화하여 특정 퍼셉트론에 과도한 의존을 줄인다.
+  - dropout(0.2)는 각 훈련 단계에서 퍼셉트론의 20%를 무작위로 비활성화 하는 것을 의미한다.
+
+
+
+-  딥러닝 모델을 (input layer / hidden layer / output layer) 정의한다.
   - input layer: Dense(128)은 특성 개수(input_dim)에 따라 첫 번째 hidden layer을 생성한다.
   - hidden layer:
       - 128 → 64 → 32 perceptron을 가진 3개의 hidden layer을 형성한다.
