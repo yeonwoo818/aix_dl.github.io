@@ -115,7 +115,7 @@ alcohol_levels = {
 # 2. 수학 및 포르투갈어 데이터셋 병합
 students_df = pd.concat([math_df, por_df], ignore_index=True)
 ```
-- 두 데이터프레임 하나로 결합한다.
+- 두 데이터프레임(math_df, por_df)을 하나로 결합한다.
 - ignore_index=True를 통해 새로운 데이터프레임의 인덱스를 재설정한다.
 
 ```python
@@ -131,7 +131,7 @@ def classify_alcohol_level(dalc, walc):
 
 students_df['alcohol_level'] = students_df.apply(lambda x: classify_alcohol_level(x['Dalc'], x['Walc']), axis=1)
 ```
-- Dalc(주중 음주 수준)과 Walc(주말 음주 수준)의 평균을 구하여 세가지 음주 수준으로 분류한다.
+- Dalc(주중 음주 수준)과 Walc(주말 음주 수준)의 평균을 구하여 세 가지 음주 수준으로 분류한다.
 - apply를 사용하여 각 행에 classify_alcohol_level 함수를 적용한다.
 
 ```python
