@@ -189,16 +189,27 @@ model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
       - Dropout(20%): 과적합 방지를 위해 perceptron의 일부를 무작위로 비활성화한다.
   - output layer: Dense(1)은 단일 연속형 값을 출력한다.
 
+- compile
+  - adam: 적응형 학습률 최적화 알고리즘
+  - mean_squared_error: 손실 함수로 평균 제곱 오차를 사용한다.
+  - mae: 모델 성능 측정 지표로 평균 절대 오차를 사용한다.
+ 
 ```python
 # 9. 모델 학습
 model.fit(x_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
 ```
+- epochs=50: 50번 반복 학습을 의미한다.
+- batch_size=32: 각 batch에 32개의 샘플을 사용한다.
+- validation_split=0.2: 학습 데이터 중 20%를 검증 데이터로 사용한다.
+
 ```python
 # 10. 모델 평가
 loss, mae = model.evaluate(x_test, y_test)
 print(f'테스트 세트에서의 평균 절대 오차 (MAE): {mae}')
 ```
-
+- 테스트 데이터를 사용해 모델을 평가한다.
+- 평균 절대 오차(mae)를 출력해 예측값과 실제값의 평균 차이를 확인한다.
+  - MAE는 모델이 예측에서 얼마나 벗어나는지를 나타낸다.
 
 
 
