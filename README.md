@@ -190,10 +190,10 @@ model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
 - Dense: Fully connected layer(완전 연결 층)을 구현하는 Keras의 레이어 클래스이다.
   - 입력과 출력을 각각의 퍼셉트론이 완전 연결하는 신경망의 기본 구성 요소이다.
   - Dense의 주요 매개변수:
-    - units: layer에서 생성할 퍼셉트론의 개수(128, 64, 32)이다. 
-    - activation: 활성화 함수. 퍼셉트론의 출력 값을 비선형 변환할 때 사용한다.
+    - <ins>units</ins>: layer에서 생성할 퍼셉트론의 개수(128, 64, 32)이다. 
+    - <ins>activation</ins>: 활성화 함수. 퍼셉트론의 출력 값을 비선형 변환할 때 사용한다.
       - ReLU(Rectified Linear Unit) 함수는 음수 값을 0으로 바꾸고 양수는 그대로 유지한다. 비선형 특성을 추가하여 모델이 복잡한 패턴을 학습할 수 있게 한다.
-    - input_dim: 입력 데이터의 차원이다. 
+    - <ins>input_dim</ins>: 입력 데이터의 차원이다. 
         - input_dim=x_train.shape[1]: 첫 layer에서 입력 데이터의 특성 수를 명시적으로 정의한 것이다.
 
 
