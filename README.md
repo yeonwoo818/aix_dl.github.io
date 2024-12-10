@@ -141,6 +141,9 @@ label_encoder = LabelEncoder()
 for col in label_columns:
     students_df[col] = label_encoder.fit_transform(students_df[col])
 ```
+- 학생 데이터의 범주형 변수(학교 이름, 성별, 거주지 유형 등)을 숫자로 변환한다.
+- LabelEncoder을 사용해 각 범주형 값을 정수로 값을 매긴다.
+
 ```python
 # 5. 수치형 변수 정규화
 numerical_columns = ['age', 'Medu', 'Fedu', 'traveltime', 'studytime', 'failures', 'famrel', 'freetime', 'goout', 'Dalc', 'Walc', 'health', 'absences', 'G1', 'G2']
@@ -148,15 +151,24 @@ scaler = MinMaxScaler()
 
 students_df[numerical_columns] = scaler.fit_transform(students_df[numerical_columns])
 ```
+- 수치형 데이터(나이, 통학 시간, 학습 시간 등)을 0과 1 사이의 값으로 정규화하여 모델 학습에 적합한 형태로 변환한다.
+- MinMaxScaler를 사용하여 값이 최소 0, 최대 1 사이에 위치하도록 스케일링한다.
+
 ```python
 # 6. 특성과 타겟 설정
 x = students_df.drop(columns=['G3', 'alcohol_level'])  # G3는 최종 성적, alcohol_level은 보조 정보
 y = students_df['G3']  # 타겟 변수 (최종 성적)
 ```
+- 특성(x): G3(최종성적)과 alcohol_level(음주 수준)을 제외한 나머지 열을 특성을 나타내는 변수로 설정한다.
+- 타겟(y): G3 열을 예측 대상 변수로 설정한다.
+
 ```python
 # 7. 데이터 분할
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 ```
+- 데이터셋을 학습 세트(80%)와 테스트 세트(20%)로 분할한다.
+- random_state = 42 (임의의 값)을 통해 결과를 재현 가능하도록 설정한다.
+
 ```python
 # 8. 딥러닝 모델 생성
 model = Sequential()
@@ -169,6 +181,14 @@ model.add(Dense(1, activation='linear'))  # 회귀 문제이므로 선형 활성
 
 model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
 ```
+- 딥러닝 모델을 (input layer / hidden layer / output layer) 정의한다.
+  - input layer: Dense(128)은 특성 개수(input_dim)에 따라 첫 번째 hidden layer을 생성한다.
+  - hidden layer:
+      - 128 → 64 → 32 perceptron을 가진 hidden layer을 형성한다.
+      - ReLU 함수를 사용한다.
+      - Dropout(20%): 과적합 방지를 위해 perceptron의 일부를 무작위로 비활성화한다.
+  - output layer: Dense(1)은 단일 연속형 값을 출력한다.
+
 ```python
 # 9. 모델 학습
 model.fit(x_train, y_train, epochs=50, batch_size=32, validation_split=0.2)
