@@ -98,6 +98,10 @@ from tensorflow.keras.layers import Dense, Dropout
 math_df = pd.read_csv('/kaggle/input/student-alcohol-consumption/student-mat.csv')
 por_df = pd.read_csv('/kaggle/input/student-alcohol-consumption/student-por.csv')
 ```
+- 두 csv 파일(student-mat.csv, student-por.csv)을 pandas 데이터프레임으로 로드한다.
+  - math_df: 수학 과목 학생 데이터
+  - por_df: 포르투갈어 과목 학생 데이터
+
 ```python
 # 알코올 소비 데이터 (수준별 빈도 데이터)
 alcohol_levels = {
@@ -106,10 +110,14 @@ alcohol_levels = {
     "harmful level": {"Frequency": 154, "Percentage": 8.2}
 }
 ```
+
 ```python
 # 2. 수학 및 포르투갈어 데이터셋 병합
 students_df = pd.concat([math_df, por_df], ignore_index=True)
 ```
+- 두 데이터프레임 하나로 결합한다.
+- ignore_index=True를 통해 새로운 데이터프레임의 인덱스를 재설정한다.
+
 ```python
 # 3. 알코올 소비 수준 분류
 def classify_alcohol_level(dalc, walc):
@@ -123,6 +131,9 @@ def classify_alcohol_level(dalc, walc):
 
 students_df['alcohol_level'] = students_df.apply(lambda x: classify_alcohol_level(x['Dalc'], x['Walc']), axis=1)
 ```
+- Dalc(주중 음주 수준)과 Walc(주말 음주 수준)의 평균을 구하여 세가지 음주 수준으로 분류한다.
+- apply를 사용하여 각 행에 classify_alcohol_level 함수를 적용한다.
+
 ```python
 # 4. 범주형 변수 인코딩
 label_columns = ['school', 'sex', 'address', 'famsize', 'Pstatus', 'Mjob', 'Fjob', 'reason', 'guardian', 'schoolsup', 'famsup', 'paid', 'activities', 'nursery', 'higher', 'internet', 'romantic']
