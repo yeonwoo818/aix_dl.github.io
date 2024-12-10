@@ -48,8 +48,8 @@
 
 
 ## III. Methodology
-   - 학생의 성적 데이터를 기반으로 예측 모델을 생성.
-
+   - 학생의 학업 데이터와 알코올 소비 수준 데이터를 바탕으로 학생의 최종 성적을 예측하는 회귀 모델을 구축한다.
+   - 딥러닝 기반의 다층 퍼셉트론(Multi-Layer Perceptron)모델을 사용한다.
 
 ```python
 import pandas as pd
@@ -184,7 +184,7 @@ model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
 - 딥러닝 모델을 (input layer / hidden layer / output layer) 정의한다.
   - input layer: Dense(128)은 특성 개수(input_dim)에 따라 첫 번째 hidden layer을 생성한다.
   - hidden layer:
-      - 128 → 64 → 32 perceptron을 가진 hidden layer을 형성한다.
+      - 128 → 64 → 32 perceptron을 가진 3개의 hidden layer을 형성한다.
       - ReLU 함수를 사용한다.
       - Dropout(20%): 과적합 방지를 위해 perceptron의 일부를 무작위로 비활성화한다.
   - output layer: Dense(1)은 단일 연속형 값을 출력한다.
