@@ -186,19 +186,15 @@ model.add(Dense(1, activation='linear'))  # 회귀 문제이므로 선형 활성
 
 model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
 ```
-- Sequential: 딥러닝 모델의 layer을 순차적으로 쌓도록 하는 Keras의 클래스이다.
-- Dense: Fully connected layer을 구현하는 Keras의 레이어 클래스이다.
+
+- Dense: Fully connected layer(완전 연결 층)을 구현하는 Keras의 레이어 클래스이다.
   - 입력과 출력을 각각의 퍼셉트론이 완전 연결하는 신경망의 기본 구성 요소이다.
   - Dense의 주요 매개변수:
     - units: layer에서 생성할 퍼셉트론의 개수(128, 64, 32)이다. 
     - activation: 활성화 함수. 퍼셉트론의 출력 값을 비선형 변환할 때 사용한다.
       - ReLU(Rectified Linear Unit) 함수는 음수 값을 0으로 바꾸고 양수는 그대로 유지한다. 비선형 특성을 추가하여 모델이 복잡한 패턴을 학습할 수 있게 한다.
-    - input_dim: 입력 데이터의 차원이다. 처음 layer에서만 필요하다.
+    - input_dim: 입력 데이터의 차원이다. 
         - input_dim=x_train.shape[1]: 첫 layer에서 입력 데이터의 특성 수를 명시적으로 정의한 것이다.
-- Dropout: 모델의 과적합(overfitting)을 방지하기 위한 정규화 기법이다.
-  - 훈련 중 무작위로 퍼셉트론의 일부를 값을 0으로 비활성화하여 특정 퍼셉트론에 과도한 의존을 줄인다.
-  - dropout(0.2)는 각 훈련 단계에서 퍼셉트론의 20%를 무작위로 비활성화 하는 것을 의미한다.
-
 
 
 -  딥러닝 모델을 (input layer / hidden layer / output layer) 정의한다.
@@ -206,7 +202,7 @@ model.compile(optimizer='adam', loss='mean_squared_error', metrics=['mae'])
   - hidden layer:
       - 128 → 64 → 32 perceptron을 가진 3개의 hidden layer을 형성한다.
       - ReLU 함수를 사용한다.
-      - Dropout(20%): 과적합 방지를 위해 perceptron의 일부를 무작위로 비활성화한다.
+      - Dropout(20%): 과적합 방지를 위해 perceptron의 일부를 무작위로 비활성화해 특정 퍼셉트론의 과도한 의존을 줄인다. 각 훈련 단계에서 퍼셉트론의 20%를 무작위로 비활성화 하는 것을 의미한다.
   - output layer: Dense(1)은 단일 연속형 값을 출력한다.
 
 - compile
